@@ -1,4 +1,4 @@
-package com.example.carver.Usuario;
+package com.example.carver.Models;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,7 +14,7 @@ public class Usuario {
             strategy = GenerationType.SEQUENCE,
             generator = "usuario_sequence"
     )
-    private int userId;
+    private Long userId;
     private String name;
     private String lastName;
     private String secondLastName;
@@ -24,7 +24,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int userId, String name, String lastName, String secondLastName, String email, String password) {
+    public Usuario(Long userId, String name, String lastName, String secondLastName, String email, String password) {
         this.userId = userId;
         this.name = name;
         this.lastName = lastName;
@@ -41,11 +41,11 @@ public class Usuario {
         this.password = password;
     }
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
